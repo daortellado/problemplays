@@ -1,90 +1,129 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Problem Plays // CA surf rockers</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton2.css">
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/icon.png">
-
-  <!-- Socials
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Plays - Sacramento Rock Band</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Russo+One&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .band-logo {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-size: 1em;
+            margin-top: 15px;
+            letter-spacing: 0px;
+            color: #a0a0a0;
+            text-transform: lowercase;
+        }
+        .splash-image {
+            width: 100%;
+            max-height: 600px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .social-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            padding: 10px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .social-links a:hover {
+            background-color: #ffffff;
+            color: #121212;
+        }
+        @media (max-width: 768px) {
+            .tagline {
+                font-size: 0.9em;
+            }
+            .social-links {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-   <!-- for blank space in div use the following -> &nbsp; -->
-  <div class="container">
-    <div class="row">
-      <div class="twelve columns">
-        <h1 style="text-align: center;"><strong>PROBLEM PLAYS</strong></h1>
-        <h3 style="text-align: center;"><i>new single "tidal wave" out NOW</i></h3>
-      </div>
+    <div class="container">
+        <header>
+            <svg class="band-logo" viewBox="0 0 500 100" xmlns="http://www.w3.org/2000/svg">
+                <style>
+                    .problem { font-family: 'Russo One', sans-serif; }
+                    .plays { font-family: 'Russo One', sans-serif; font-style: italic; }
+                </style>
+                <defs>
+                    <path id="custom-p" d="M10,0 v100 h15 v-45 h20 l25,-25 l-25,-30 h-35 Z M25,15 l20,20 l-20,20 v-40" />
+                </defs>
+                <use href="#custom-p" x="0" y="0" fill="white" />
+                <text x="70" y="75" fill="white" class="problem" font-size="50">ROBLEM</text>
+                <use href="#custom-p" x="300" y="0" fill="white" />
+                <text x="370" y="75" fill="white" class="plays" font-size="50">LAYS</text>
+            </svg>
+            <div class="tagline">three piece band from sac, ca</div>
+        </header>
+        
+        <img src="band.jpg" alt="Problem Plays Band" class="splash-image">
+        
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kRqon9v56vM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://www.instagram.com/problemplays" target="_blank" aria-label="Instagram"><i data-feather="instagram"></i></a>
+            <a href="mailto:problemplaysband@gmail.com" aria-label="Email"><i data-feather="mail"></i></a>
+            <a href="https://open.spotify.com/artist/1GkkyjttaSzz8eAi5ScZDj" target="_blank" aria-label="Spotify"><i data-feather="music"></i></a>
+        </div>
     </div>
-    <div class="row">
-      <div class="six columns">
-        <a href="https://open.spotify.com/track/6LFzWJwnp5aw1s4Cr5arKb?si=7c105e0b122c4a42">
-        <h5 style="text-align: center;">LISTEN TO IT ON SPOTIFY HERE</h5>
-        <img class="u-max-full-width" src="images/single.jpg"></a>
-      </div>
-      <div class="six columns">
-        <a href="./merch.html">
-        <h5 style="text-align: center;">CHECK OUT OUR MERCH HERE</h5>
-        <img class="u-max-full-width" src="images/downhat_c.jpg">
-      </a>
-      </div>
-    </div>
-        <div class="row">
-      <div class="four columns">
-        <img class="u-max-full-width" src="images/bw_damian_c.jpg" style='height: 100%; width: 100%; object-fit: contain'/>
-      </div>
-      <div class="four columns" align="center">
-        <img class="u-max-full-width" src="images/anicrop.gif" style='height: 100%; width: 100%; object-fit: contain'/>
-      </div>
-      <div class="four columns">
-        <img class="u-max-full-width" src="images/bw_samb_c.jpg" style='height: 100%; width: 100%; object-fit: contain'/>
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns" align="center">
-        <a href="https://www.facebook.com/problemplays" class="fa fa-facebook"></a>
-      </div>
-      <div class="four columns" align="center">
-        <a href="https://www.instagram.com/problemplays/" class="fa fa-instagram"></a>
-      </div>
-      <div class="four columns" align="center">
-        <a href="https://www.youtube.com/channel/UCLvbW8-Ktp8Rsbiv3B82iGQ" class="fa fa-youtube"></a>
-      </div>
-    </div>
-  </div>
-
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<script src="scripts.js"></script>
-<footer>
-    <div class="footer">
-<p>Contact/booking:<br>
-  <a href="mailto:problemplaysband@gmail.com">problemplaysband@gmail.com</a></p>
-</footer>
+    <script>
+      feather.replace()
+    </script>
 </body>
-<script async defer src="https://platform.instagram.com/en_US/embeds.js"></script>
 </html>
