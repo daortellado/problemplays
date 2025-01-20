@@ -145,21 +145,20 @@
 
         <div class="section">
             <div class="section-title">Bio</div>
-            <p>Problem Plays is a three-piece band from Sacramento, CA, blending midwest emo charm with catchy songwriting and (loud) live performances. Formed in 2018, the band consists of Damian Ortellado (guitar/vocals), Sam Benavidez (drums), and Sam Fields (bass/vocals).</p>
-            <p>Since their formation, Problem Plays has evolved from their surfy punk rock roots to develop a distinctive sound characterized by vintage guitar tones, melodic vocals, and complex, thumping basslines, all anchored by Sam B's explosive drumming (also known for his work with international touring act SWMRS).</p>
-            <p>The band has established themselves as a fixture in the Sacramento scene, with performances at venues like Cafe Colonial, Old Ironsides, Golden Bear, and Secret Compound. They've expanded their reach to the Bay Area and beyond, playing notable venues including 924 Gilman, Oakland Secret, and The Ritz in San Jose. Their festival appearances include Jest Fest 2024.</p>
-            <p>Their discography includes the 2018 "St Helena EP," followed by a DIY full-length album "BEESWAX!" recorded during COVID and released in early 2024, preceded by a pair of singles in 2023.</p>
+            <p>Problem Plays is a three-piece band from Sacramento, CA. Damian Ortellado (guitar/vox) and the dual-Sam rhythm section of Sam Benavidez (drums) and Sam Fields (bass/vox) have been playing loud music together since 2018.</p>
+            <p>The band has evolved from an in-your-face surfy punk rock sound to a more ~mature~ indie-emo one with prettier, "vintagey" guitar tones, but the melodic vocals, complex basslines and thunderous percussion thankfully remain.</p>
+            <p>Cafe Colonial, Old Ironsides, Golden Bear, and Sac's beloved house venues, Secret Compound and the Hearth, have all played host to the trio. On occassion they've expanded their reach to the Bay Area and beyond, dabbling into DIY spots like 924 Gilman, Oakland Secret, and even The Ritz in San Jose. Their festival appearances include Jest Fest 2024.</p>
+            <p>Shortly after forming, the band released a small collection of songs that captured them still figuring out their style with the "St Helena EP". During COVID, the band recorded their first full-length album "BEESWAX!" with the assistance of close friends in the scene, spending long nights huddled in little basements and garages wrestling with self-production.</p>
         </div>
 
         <div class="section">
             <div class="section-title">New Release</div>
-            <p>Problem Plays is set to release their new album in early 2025, recorded at Rosa Mortem Studios in Sacramento and preceded by their single "Demon Future" dropping January 31st. The album explores themes of cultural identity and reconnection with roots, drawing from vocalist Damian's Paraguayan heritage, while diving deep into contemporary issues like parasocial relationships and mental health.</p>
-            <p>The record showcases the band's new sound while lyrically, the album navigates personal struggles with anxiety, celebrates the support systems that keep us going, and contemplates the allure of starting fresh - all through a renewed storytelling approach to songwriting.</p>
+            <p>Problem Plays is set to release their currently unannounced new album in early 2025, recorded at Rosa Mortem Studios in Sacramento. They've announced a new single, "Demon Future", coming out at the end of January, that should give listeners an idea of the direction the band has taken since regrouping post-pandemic.</p>
+            <p>These tracks are frankly more focused than anything they've written in the past - written in cars, planes, and bathrooms, they serve as thought exercises about the persistence of cultural identity, the allure of starting fresh, the grip of parasocial relationships, the flaws that make us unique and small acts of kindness that give us hope.</p>
         </div>
 
         <div class="section">
             <div class="section-title">Download Materials</div>
-            <p>Download our press materials:</p>
             <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                 <a href="#" class="download-button" id="pdfButton">Download Press Kit PDF</a>
                 <a href="pp-press-photos.cpgz" class="download-button" style="background-color: transparent; color: #ffffff; border: 2px solid #ffffff;">Download Press Photos</a>
@@ -179,12 +178,12 @@
                 <div class="photo-wrapper"><img src="damian3.jpg" alt="Damian Ortellado"></div>
                 <div class="photo-wrapper"><img src="samf3.jpg" alt="Sam Fields"></div>
             </div>
-            <p style="margin-top: 20px; font-size: 0.9em;">All photos available in high resolution (300 DPI). Please contact the band for photographer credits.</p>
+            <p style="margin-top: 20px; font-size: 0.9em;">Please contact the band for photographer credits.</p>
         </div>
 
         <div class="section">
-            <div class="section-title">Live Sessions & Notable Performances</div>
-            <p>Problem Plays has been featured on several notable live sessions, including:</p>
+            <div class="section-title">Live Session Performances</div>
+            <p>Problem Plays has been featured on a couple of live sessions, including:</p>
             <ul style="list-style-type: none; padding-left: 20px;">
                 • "Lofire" live video series (featured on our homepage)
                 • Full album live session at Signa Rare Plants, Sacramento (releasing January 24th, 2025)
@@ -198,8 +197,7 @@
         </div>
 
         <div class="section">
-            <div class="section-title">Technical Requirements</div>
-            <p>Stage Setup:</p>
+            <div class="section-title">Stage Setup</div>
             <ul style="list-style-type: none; padding-left: 20px;">
                 • Standard drum kit
                 • Bass amplifier and cabinet
@@ -227,81 +225,81 @@
       // Initialize jsPDF
       window.jsPDF = window.jspdf.jsPDF;
 
-      async function generatePDF() {
-          const doc = new jsPDF();
-          const pageWidth = doc.internal.pageSize.getWidth();
-          const margin = 20;
-          const contentWidth = pageWidth - (margin * 2);
-          let currentY = 20;
+    async function generatePDF() {
+    const doc = new jsPDF();
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const margin = 20;
+    const contentWidth = pageWidth - (margin * 2);
+    let currentY = 20;
 
-          function addSpace(space = 10) {
-              currentY += space;
-          }
+    function addSpace(space = 10) {
+        currentY += space;
+    }
 
-          function addTextBlock(text, size = 12, indent = 0) {
-              doc.setFontSize(size);
-              const lines = doc.splitTextToSize(text, contentWidth - indent);
-              doc.text(lines, margin + indent, currentY);
-              currentY += (lines.length * size * 0.352778);
-          }
+    function addTextBlock(text, size = 12, indent = 0) {
+        doc.setFontSize(size);
+        const lines = doc.splitTextToSize(text, contentWidth - indent);
+        doc.text(lines, margin + indent, currentY);
+        currentY += (lines.length * size * 0.352778);
+    }
 
-          function addSectionHeader(text) {
-              addSpace(10);
-              doc.setFontSize(16);
-              doc.setFont('helvetica', 'bold');
-              doc.text(text, margin, currentY);
-              addSpace(8);
-              doc.setFont('helvetica', 'normal');
-          }
+    function addSectionHeader(text) {
+        addSpace(10);
+        doc.setFontSize(16);
+        doc.setFont('helvetica', 'bold');
+        doc.text(text, margin, currentY);
+        addSpace(8);
+        doc.setFont('helvetica', 'normal');
+    }
 
-          doc.setFont('helvetica', 'bold');
-          doc.setFontSize(24);
-          doc.text('PROBLEM PLAYS', pageWidth/2, currentY, { align: 'center' });
-          currentY += 8;
-          doc.setFontSize(16);
-          doc.text('ELECTRONIC PRESS KIT', pageWidth/2, currentY, { align: 'center' });
-          currentY += 15;
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(24);
+    doc.text('PROBLEM PLAYS', pageWidth/2, currentY, { align: 'center' });
+    currentY += 8;
+    doc.setFontSize(16);
+    doc.text('ELECTRONIC PRESS KIT', pageWidth/2, currentY, { align: 'center' });
+    currentY += 15;
 
-          addSectionHeader('Bio');
-          addTextBlock('Problem Plays is a three-piece band from Sacramento, CA, blending midwest emo charm with catchy songwriting and (loud) live performances. Formed in 2018, the band consists of Damian Ortellado (guitar/vocals), Sam Benavidez (drums), and Sam Fields (bass/vocals).');
-          addSpace(5);
-          addTextBlock('Since their formation, Problem Plays has evolved from their surfy punk rock roots to develop a distinctive sound characterized by vintage guitar tones, melodic vocals, and complex, thumping basslines, all anchored by Sam B\'s explosive drumming (also known for his work with international touring act SWMRS).');
-          addSpace(5);
-          addTextBlock('The band has established themselves as a fixture in the Sacramento scene, with performances at venues like Cafe Colonial, Old Ironsides, Golden Bear, and Secret Compound. They\'ve expanded their reach to the Bay Area and beyond, playing notable venues including 924 Gilman, Oakland Secret, and The Ritz in San Jose. Their festival appearances include Jest Fest 2024.');
-          addSpace(5);
-          addTextBlock('Their discography includes the 2018 "St Helena EP," followed by a DIY full-length album "BEESWAX!" recorded during COVID and released in early 2024, preceded by a pair of singles in 2023.');
+    addSectionHeader('Bio');
+    addTextBlock('Problem Plays is a three-piece band from Sacramento, CA. Damian Ortellado (guitar/vox) and the dual-Sam rhythm section of Sam Benavidez (drums) and Sam Fields (bass/vox) have been playing loud music together since 2018.');
+    addSpace(5);
+    addTextBlock('The band has evolved from an in-your-face surfy punk rock sound to a more ~mature~ indie-emo one with prettier, "vintagey" guitar tones, but the melodic vocals, complex basslines and thunderous percussion thankfully remain.');
+    addSpace(5);
+    addTextBlock('Cafe Colonial, Old Ironsides, Golden Bear, and Sac\'s beloved house venues, Secret Compound and the Hearth, have all played host to the trio. On occassion they\'ve expanded their reach to the Bay Area and beyond, dabbling into DIY spots like 924 Gilman, Oakland Secret, and even The Ritz in San Jose. Their festival appearances include Jest Fest 2024.');
+    addSpace(5);
+    addTextBlock('Shortly after forming, the band released a small collection of songs that captured them still figuring out their style with the "St Helena EP". During COVID, the band recorded their first full-length album "BEESWAX!" with the assistance of close friends in the scene, spending long nights huddled in little basements and garages wrestling with self-production.');
 
-          addSectionHeader('New Release');
-          addTextBlock('Problem Plays is set to release their new album in early 2025, recorded at Rosa Mortem Studios in Sacramento and preceded by their single "Demon Future" dropping January 31st. The album explores themes of cultural identity and reconnection with roots, drawing from vocalist Damian\'s Paraguayan heritage, while diving deep into contemporary issues like parasocial relationships and mental health.');
-          addSpace(4);
-          addTextBlock('The record showcases the band\'s new sound while lyrically, the album navigates personal struggles with anxiety, celebrates the support systems that keep us going, and contemplates the allure of starting fresh - all through a renewed storytelling approach to songwriting.');
+    addSectionHeader('New Release');
+    addTextBlock('Problem Plays is set to release their currently unannounced new album in early 2025, recorded at Rosa Mortem Studios in Sacramento. They\'ve announced a new single, "Demon Future", coming out at the end of January, that should give listeners an idea of the direction the band has taken since regrouping post-pandemic.');
+    addSpace(4);
+    addTextBlock('These tracks are frankly more focused than anything they\'ve written in the past - written in cars, planes, and bathrooms, they serve as thought exercises about the persistence of cultural identity, the allure of starting fresh, the grip of parasocial relationships, the flaws that make us unique and small acts of kindness that give us hope.');
 
-          addSectionHeader('Live Sessions & Notable Performances');
-          doc.setFontSize(11);
-          ['• "Lofire" live video series (featured on our homepage)',
-           '• Full album live session at Signa Rare Plants, Sacramento (releasing January 24th, 2025)'].forEach(item => {
-              doc.text(item, margin + 5, currentY);
-              addSpace(5);
-           });
+    addSectionHeader('Live Session Performances');
+    doc.setFontSize(11);
+    ['• "Lofire" live video series (featured on our homepage)',
+     '• Full album live session at Signa Rare Plants, Sacramento (releasing January 24th, 2025)'].forEach(item => {
+        doc.text(item, margin + 5, currentY);
+        addSpace(5);
+     });
 
-          addSectionHeader('Technical Requirements');
-          doc.setFontSize(11);
-          ['• Standard drum kit',
-           '• Bass amplifier and cabinet',
-           '• Guitar amplifier and cabinet',
-           '• Two vocal microphones with stands'].forEach(item => {
-              doc.text(item, margin + 5, currentY);
-              addSpace(5);
-           });
+    addSectionHeader('Stage Setup');
+    doc.setFontSize(11);
+    ['• Standard drum kit',
+     '• Bass amplifier and cabinet',
+     '• Guitar amplifier and cabinet',
+     '• Two vocal microphones with stands'].forEach(item => {
+        doc.text(item, margin + 5, currentY);
+        addSpace(5);
+     });
 
-          addSectionHeader('Contact');
-          doc.setFontSize(11);
-          addTextBlock('For all booking, press inquiries, and general communication:');
-          addSpace(2);
-          doc.text('Email: problemplaysband@gmail.com', margin, currentY);
+    addSectionHeader('Contact');
+    doc.setFontSize(11);
+    addTextBlock('For all booking, press inquiries, and general communication:');
+    addSpace(2);
+    doc.text('Email: problemplaysband@gmail.com', margin, currentY);
 
-          doc.save('problem-plays-epk.pdf');
-      }
+    doc.save('problem-plays-epk.pdf');
+}
 
       // Add click handler to download button
       document.addEventListener('DOMContentLoaded', function() {
